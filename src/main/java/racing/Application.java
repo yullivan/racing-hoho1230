@@ -7,11 +7,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+
+
 public class Application {
+
+    static String load(int 이동거리){
+        final String 짝대기 = "-";
+        return 짝대기.repeat(이동거리);
+
+    }
+    public static void printResult(Car car) {
+
+        System.out.println(car.getName()+load(car.get이동거리()));
+    }
 
     public static void main(String[] args) {
         final String EMOJI = "\uD83C\uDFCE\uFE0F";
-        final String load = "-";
+
 
 
         Scanner scanner = new Scanner(System.in);
@@ -27,40 +39,37 @@ public class Application {
         System.out.println("carS2 = " + carS2);
         System.out.println("carS3 = " + carS3);
 
-        List<Car> carList = new ArrayList<>(List.of(new Car(carS1),new Car(carS2),new Car(carS3)));
+        Car car1 = new Car(carS1);
+        Car car2 = new Car(carS2);
+        Car car3 = new Car(carS3);
+
+
+        List<Car> carList = new ArrayList<>(List.of(car1,car2,car3));
 
         System.out.println(carList);
         System.out.print("몇 회 실행할까요?");
         int count = scanner.nextInt();
 
-        String carStatus = "";
 
-        for (Car car : carList) {
-            String emojiCar = car.toString().concat(" " + EMOJI);
-            for (int i = 0; i < count; i++) {
-                if (car.goStop() == "go") {
-                    if (carStatus.contains(EMOJI)) {
-                        carStatus = carStatus.concat(load);
-                    } else carStatus = emojiCar.concat(load);
-                } else carStatus = carStatus;
 
-//            if (carStatus.contains(load.repeat(4))) {
-//                carStatus = carStatus.concat("\uD83C\uDFC1");
+        //String emojiCar = car.toString().concat(" " + EMOJI);
+
+
+
+
+
+
+
+
 //                System.out.println("(" + (i + 1) + ")");
 //                System.out.println(carStatus);
-//
-//                System.out.println("🏆우승자는 " + car1 + "!");
-//                break;
-//            }
-                System.out.println("(" + (i + 1) + ")");
-                System.out.println(carStatus);
 
             }
-        }
-
-
-
-    }
 
 
 }
+
+
+
+
+

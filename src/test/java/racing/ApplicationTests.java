@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Random;
 
+import static java.lang.System.load;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
@@ -24,12 +25,20 @@ class ApplicationTests {
     }
 
     @Test
-    void game함수테스트() {
-        //given
-        Car car1 = new Car("car1");
-        //when
+    void loadTest() {
+        Car car1=new Car("hoyoen");
+        Car car2=new Car("hoyo");
+        Car car3=new Car("hoen");
 
-        //then
-        //System.out.println(car1.game());
+        car1.goStop();
+        car2.goStop();
+        car3.goStop();
+        Application.printResult(car1);
+        Application.printResult(car2);
+        Application.printResult(car3);
+
+
     }
+
+
 }
