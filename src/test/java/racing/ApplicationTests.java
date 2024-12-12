@@ -1,7 +1,6 @@
 package racing;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Random;
 
@@ -24,5 +23,13 @@ class ApplicationTests {
 
     }
 
+    @Test
+    void game함수테스트() {
+        //given
+        Car car1 = new Car("car1");
+        //when
 
+        //then
+        //System.out.println(car1.game());
+    }
 }
