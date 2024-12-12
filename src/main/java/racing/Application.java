@@ -19,16 +19,26 @@ public class Application {
             System.out.print("몇 회 실행할까요?");
             int count =scanner.nextInt();
            String emojiCar = car1.toString().concat(" "+EMOJI);
-
            String carStatus="";
+
         for (int i = 0; i < count; i++) {
             if(car1.goStop()=="go"){
                 if(carStatus.contains(EMOJI)){
                     carStatus=carStatus.concat(load);
                 }else carStatus= emojiCar.concat(load);
+            }else carStatus=carStatus;
+
+            if(carStatus.contains(load.repeat(4))){
+                carStatus=carStatus.concat("\uD83C\uDFC1");
+                System.out.println("("+(i+1)+")");
+                System.out.println(carStatus);
+
+                System.out.println("🏆우승자는 "+car1+"!");
+                break;
             }
             System.out.println("("+(i+1)+")");
             System.out.println(carStatus);
+
         }
 
 
