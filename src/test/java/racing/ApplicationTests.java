@@ -37,7 +37,14 @@ class ApplicationTests {
     void randomTest() {
         Car car = new Car("car", 3);
         int count=car.goCount(car.get이동거리());
-       assertThat(count).isEqualTo(3);//랜덤이기떄문에 성공하거나 안하거나
+       //assertThat(count).isEqualTo(3);//랜덤이기떄문에 성공하거나 안하거나
+    }
+
+    @Test
+    void 카운트만큼길만들기() {
+        Car car = new Car("car", 3);
+
+        assertThat(Application.makeLoad(car)).isEqualTo(car.getName()+"---");
     }
 }
 

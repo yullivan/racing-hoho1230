@@ -43,4 +43,6 @@ public class Car {
     public int hashCode() {
         return Objects.hash(name, 이동거리);
     }
+
+
 }
