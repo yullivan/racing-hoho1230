@@ -1,6 +1,7 @@
 package racing;
 
 import java.util.Objects;
+import java.util.Random;
 
 public class Car {
     String name;
@@ -13,7 +14,16 @@ public class Car {
         this.name=name;
         this.이동거리=이동거리;
     }
+    int goCount(int 이동거리){
 
+        int randomNum = new Random().nextInt(6)+1;
+        if(!(randomNum==1||randomNum==2)){
+            이동거리+=1;
+
+        }
+        return 이동거리;
+
+    }
     public String getName() {
         return name;
     }
