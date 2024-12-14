@@ -1,9 +1,6 @@
 package racing;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
-import java.util.Random;
+import java.util.*;
 
 public class Car {
     String name;
@@ -16,7 +13,7 @@ public class Car {
         this.name=name;
         this.이동거리=이동거리;
     }
-    int goCount(int 이동거리){
+    int goRandomCount(int 이동거리){
 
         int randomNum = new Random().nextInt(6)+1;
         if(!(randomNum==1||randomNum==2)){
@@ -24,8 +21,19 @@ public class Car {
 
         }
         return 이동거리;
-
     }
+    static List<Car> goRandomCount(List<Car> carList){
+        List<Car> 새로운carList =new ArrayList<>();
+        for (Car car : carList) {
+            int 새로운이동거리=car.goRandomCount(car.get이동거리());
+            Car car1=new Car(car.getName(),새로운이동거리);
+            새로운carList.add(car1);
+        }
+
+        return 새로운carList;
+    }
+
+
     public String getName() {
         return name;
     }
@@ -52,4 +60,10 @@ public class Car {
         return 우승자리스트;
     }
 
+    @Override
+    public String toString() {
+        return "Car{" +
+                name +","+ 이동거리 +
+                '}';
+    }
 }

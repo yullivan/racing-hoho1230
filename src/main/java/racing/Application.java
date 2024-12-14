@@ -8,6 +8,21 @@ import java.util.Scanner;
 public class Application {
 
     public static void main(String[] args) {
+//        입력(car1,car2,car3)
+//        List<Car> carList=carToList(car1,car2,car3);
+//        입력(반복횟수) -미정
+//
+//        Car.goCount(carList);
+//
+//        makeLoad(carList);
+
+
+
+
+
+
+
+
 
     }
 

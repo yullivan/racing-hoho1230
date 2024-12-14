@@ -38,7 +38,7 @@ class ApplicationTests {
     @Test
     void randomTest() {
         Car car = new Car("car", 3);
-        int count=car.goCount(car.get이동거리());
+        int count=car.goRandomCount(car.get이동거리());
        //assertThat(count).isEqualTo(3);//랜덤이기떄문에 성공하거나 안하거나
     }
 
@@ -61,8 +61,14 @@ class ApplicationTests {
         for (Car car1 : carList) {
             System.out.println(Application.makeLoad(car1));
         }
+    }
 
-
+    @Test
+    void gocountlistTest() {
+        List<Car> carList=new ArrayList<>(List.of(new Car("c1",1)
+                ,new Car("c2",2)
+                ,new Car("c3",3)));
+        System.out.println(Car.goRandomCount(carList));
 
     }
 }
