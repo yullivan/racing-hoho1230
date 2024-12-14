@@ -3,6 +3,7 @@ package racing;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -42,6 +43,14 @@ class ApplicationTests {
     }
 
     @Test
+    void 우승자추출테스트() {
+        List<Car> carList=new ArrayList<>(List.of(new Car("c1",1)
+                ,new Car("c2",2)
+                ,new Car("c3",3)));
+        assertThat(Car.winner(carList)).isEqualTo(new ArrayList<>(List.of(new Car("c3",3))));
+    }
+
+    @Test
     void 카운트만큼길만들기() {
         Car car = new Car("car", 3);
         List<Car> carList=new ArrayList<>(List.of(new Car("c1",1)
@@ -52,6 +61,8 @@ class ApplicationTests {
         for (Car car1 : carList) {
             System.out.println(Application.makeLoad(car1));
         }
+
+
 
     }
 }

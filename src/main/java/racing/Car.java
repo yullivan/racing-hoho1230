@@ -1,5 +1,7 @@
 package racing;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 import java.util.Random;
 
@@ -43,6 +45,11 @@ public class Car {
     public int hashCode() {
         return Objects.hash(name, 이동거리);
     }
+    static List<Car> winner(List<Car> carList){
+        int max= Collections.max(carList.stream().map(car -> car.get이동거리()).toList());
 
+        List<Car> 우승자리스트=carList.stream().filter(car -> car.get이동거리()==max).toList();
+        return 우승자리스트;
+    }
 
 }
