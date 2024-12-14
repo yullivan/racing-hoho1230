@@ -1,5 +1,7 @@
 package racing;
 
+import java.util.Objects;
+
 public class Car {
     String name;
     int 이동거리;
@@ -18,5 +20,17 @@ public class Car {
 
     public int get이동거리() {
         return 이동거리;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return 이동거리 == car.이동거리 && Objects.equals(name, car.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, 이동거리);
     }
 }
