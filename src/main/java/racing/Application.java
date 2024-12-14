@@ -19,6 +19,13 @@ public class Application {
     public static String makeLoad(Car car) {
         String load="-";
         String goLoad=car.getName()+load.repeat(car.get이동거리());
+
+        return goLoad;
+    }
+    public static List<String> makeLoad(List<Car> carList) {
+        String load="-";
+        List<String> goLoad=carList.stream().map(car ->car.getName()+load.repeat(car.get이동거리())).toList();
+
         return goLoad;
     }
 
