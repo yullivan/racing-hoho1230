@@ -13,6 +13,11 @@ public class Car {
         this.name=name;
         this.이동거리=이동거리;
     }
+
+    public void set이동거리(int 이동거리) {
+        this.이동거리 = 이동거리;
+    }
+
     int goRandomCount(int 이동거리){
 
         int randomNum = new Random().nextInt(6)+1;
@@ -22,16 +27,25 @@ public class Car {
         }
         return 이동거리;
     }
-    static List<Car> goRandomCount(List<Car> carList){
-        List<Car> 새로운carList =new ArrayList<>();
+    static void goRandomCount(List<Car> carList){
+        //List<Car> 새로운carList =new ArrayList<>();
         for (Car car : carList) {
-            int 새로운이동거리=car.goRandomCount(car.get이동거리());
-            Car car1=new Car(car.getName(),새로운이동거리);
-            새로운carList.add(car1);
+            int randomNum = new Random().nextInt(6)+1;
+            if(!(randomNum==1||randomNum==2)){
+                car.set이동거리(car.get이동거리()+1);
+            }
         }
-
-        return 새로운carList;
     }
+//    static List<Car> goRandomCount(List<Car> carList){
+//        List<Car> 새로운carList =new ArrayList<>();
+//        for (Car car : carList) {
+//            int 새로운이동거리=car.goRandomCount(car.get이동거리());
+//            Car car1=new Car(car.getName(),새로운이동거리);
+//            새로운carList.add(car1);
+//        }
+//
+//        return 새로운carList;
+//    }
 
 
     public String getName() {

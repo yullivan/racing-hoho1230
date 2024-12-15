@@ -15,15 +15,16 @@ public class Application {
 
         for(int i=0;i<=count;i++) {
         System.out.printf("("+i+")\n");
-        List<Car> newCarList=Car.goRandomCount(carList);//  기억할수있게 만들어줘!!!!!!
-            System.out.println(newCarList);//계속 값이 새롭게 만들어져
-            for (Car car : newCarList) {
+        Car.goRandomCount(carList);//  기억할수있게 만들어줘!!!!!!
+            for (Car car : carList) {
             System.out.println(Application.makeLoad(car));
         }
     }
     Car.winner(carList);
 
     }
+
+
     static List<Car> inputToCarlist(){
         Scanner scanner = new Scanner(System.in);
         System.out.print("레이스에 참가할 자동차들의 이름을 쉼표(,)로 구분하여 입력하세요. \n");
@@ -53,13 +54,13 @@ public class Application {
     }
     public static List<String> makeLoad(List<Car> carList) {
         String load="-";
-        //List<String> goLoad=carList.stream().map(car ->new ArrayList(List.of( car.getName().concat(load.repeat(car.get이동거리()))))).toList();
-        List<String> goLoad=new ArrayList<>();
+        List<String> goLoad=carList.stream().map(car ->car.getName().concat(load.repeat(car.get이동거리()))).toList();
+        //List<String> goLoad=new ArrayList<>();
 
-        for (Car car : carList) {
-            String s=car.getName().concat(load.repeat(car.get이동거리()));
-            goLoad.add(s);
-        }
+//        for (Car car : carList) {
+//            String s=car.getName().concat(load.repeat(car.get이동거리()));
+//            goLoad.add(s);
+//        }
 
         return goLoad;
     }
