@@ -36,17 +36,6 @@ public class Car {
             }
         }
     }
-//    static List<Car> goRandomCount(List<Car> carList){
-//        List<Car> 새로운carList =new ArrayList<>();
-//        for (Car car : carList) {
-//            int 새로운이동거리=car.goRandomCount(car.get이동거리());
-//            Car car1=new Car(car.getName(),새로운이동거리);
-//            새로운carList.add(car1);
-//        }
-//
-//        return 새로운carList;
-//    }
-
 
     public String getName() {
         return name;
@@ -67,17 +56,16 @@ public class Car {
     public int hashCode() {
         return Objects.hash(name, 이동거리);
     }
-    static List<Car> winner(List<Car> carList){
+    static List<String> winner(List<Car> carList){
         int max= Collections.max(carList.stream().map(car -> car.get이동거리()).toList());
 
-        List<Car> 우승자리스트=carList.stream().filter(car -> car.get이동거리()==max).toList();
+        List<String> 우승자리스트=carList.stream().filter(car -> car.get이동거리()==max).map(car -> car.getName()).toList();
+
         return 우승자리스트;
     }
 
     @Override
     public String toString() {
-        return "Car{" +
-                name +","+ 이동거리 +
-                '}';
+        return name;
     }
 }

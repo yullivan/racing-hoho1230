@@ -15,15 +15,14 @@ public class Application {
 
         for(int i=0;i<=count;i++) {
         System.out.printf("("+i+")\n");
-        Car.goRandomCount(carList);//  기억할수있게 만들어줘!!!!!!
+        Car.goRandomCount(carList);
             for (Car car : carList) {
             System.out.println(Application.makeLoad(car));
         }
     }
-    Car.winner(carList);
+        System.out.println("\uD83C\uDFC6우승자는"+Car.winner(carList));
 
     }
-
 
     static List<Car> inputToCarlist(){
         Scanner scanner = new Scanner(System.in);
@@ -54,13 +53,8 @@ public class Application {
     }
     public static List<String> makeLoad(List<Car> carList) {
         String load="-";
-        List<String> goLoad=carList.stream().map(car ->car.getName().concat(load.repeat(car.get이동거리()))).toList();
-        //List<String> goLoad=new ArrayList<>();
-
-//        for (Car car : carList) {
-//            String s=car.getName().concat(load.repeat(car.get이동거리()));
-//            goLoad.add(s);
-//        }
+        String emoji=" \uD83C\uDFCE\uFE0F";
+        List<String> goLoad=carList.stream().map(car ->car.getName().concat(emoji+load.repeat(car.get이동거리()))).toList();
 
         return goLoad;
     }
