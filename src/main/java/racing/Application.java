@@ -53,7 +53,7 @@ public class Application {
     }
     public static List<String> makeLoad(List<Car> carList) {
         String load="-";
-        String emoji=" \uD83C\uDFCE\uFE0F";
+        String emoji= "\uD83D\uDECE\uFE0F";
         List<String> goLoad=carList.stream().map(car ->car.getName().concat(emoji+load.repeat(car.get이동거리()))).toList();
 
         return goLoad;

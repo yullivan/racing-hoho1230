@@ -40,6 +40,9 @@ public class Car {
     public String getName() {
         return name;
     }
+    public String getName(String emoji) {
+        return this.name+" "+emoji;
+    }
 
     public int get이동거리() {
         return 이동거리;
